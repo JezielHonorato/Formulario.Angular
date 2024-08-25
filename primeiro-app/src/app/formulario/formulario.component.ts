@@ -1,10 +1,16 @@
-import { Component } from '@angular/core';
-
+import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-formulario',
   templateUrl: './formulario.component.html',
-  styleUrl: './formulario.component.css'
+  styleUrls: ['./formulario.component.css'],
 })
-export class FormularioComponent {
-
+export class FormularioComponent implements OnInit {
+  mensagem: string;
+  constructor() {
+    this.mensagem = '';
+  }
+  ngOnInit() {}
+  alterarMensagem(n: string) {
+    this.mensagem = `Seja bem-vindo, ${n}!`;
+  }
 }
